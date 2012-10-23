@@ -7,15 +7,15 @@
 
     <servlet>
         <servlet-name>proxyServlet</servlet-name>
-        <servlet-class>org.eclipse.jetty.servlets.ProxyServlet$Transparent</servlet-class>
+        <servlet-class>com.woonoz.proxy.servlet.ProxyServlet</servlet-class>
         <init-param>
-            <param-name>ProxyTo</param-name>
-            <param-value>http://www.baidu.com</param-value>
+            <param-name>targetUrl</param-name>
+            <param-value>http://www.baidu.com/</param-value>
         </init-param>
-        <init-param>
-            <param-name>Prefix</param-name>
-            <param-value>/google</param-value>
-        </init-param>
+        <!--<init-param>-->
+        <!--<param-name>Prefix</param-name>-->
+        <!--<param-value>/google</param-value>-->
+        <!--</init-param>-->
         <load-on-startup>1</load-on-startup>
     </servlet>
 
@@ -24,14 +24,14 @@
         <url-pattern>/google/*</url-pattern>
     </servlet-mapping>
 
-    <filter>
-        <filter-name>continuationFilter</filter-name>
-        <filter-class>org.eclipse.jetty.continuation.ContinuationFilter</filter-class>
-    </filter>
+    <!--<filter>-->
+    <!--<filter-name>continuationFilter</filter-name>-->
+    <!--<filter-class>org.eclipse.jetty.continuation.ContinuationFilter</filter-class>-->
+    <!--</filter>-->
 
-    <filter-mapping>
-        <filter-name>continuationFilter</filter-name>
-        <servlet-name>proxyServlet</servlet-name>
-    </filter-mapping>
+    <!--<filter-mapping>-->
+    <!--<filter-name>continuationFilter</filter-name>-->
+    <!--<servlet-name>proxyServlet</servlet-name>-->
+    <!--</filter-mapping>-->
 
 </web-app>
